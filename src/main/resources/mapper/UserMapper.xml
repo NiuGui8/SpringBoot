@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.L.niangzi.mapper.UserMapper">
+	<resultMap id="BaseResultMap"
+		type="com.L.niangzi.pojo.User">
+		<id column="ID" property="id" jdbcType="BIGINT" />
+		<result column="USERNAME" property="username" jdbcType="VARCHAR" />
+		<result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+		<result column="DISPLAY_NAME" property="displayName" jdbcType="VARCHAR" />
+		<result column="PHONE" property="phone" jdbcType="VARCHAR" />
+		<result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+	</resultMap> 
+	
+	<select id="queryUserByCondition" resultMap="BaseResultMap">
+		select id,USERNAME,	PASSWORD,DISPLAY_NAME,PHONE,ADDRESS from t_user;
+	</select>
+</mapper>
